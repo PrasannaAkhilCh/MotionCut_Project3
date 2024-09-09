@@ -1,0 +1,74 @@
+<!-- Shop Page with Products Linked to Product Details -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Search Bar -->
+    <input type="text" id="searchBar" placeholder="Search for products..." onkeyup="searchProducts()">
+
+    <!-- Shop Page Content -->
+    <section id="productList">
+        <h2>Shop by Categories</h2>
+
+        <!-- Appliances Category -->
+        <h3>Appliances</h3>
+        <div class="product">
+            <a href="product1.html">
+                <img src="https://m.media-amazon.com/images/I/71msFUl565L._AC_UY327_FMwebp_QL65_.jpg" alt="Washing Machine">
+                <p>LG Washing Machine</p>
+            </a>
+            <p>₹35,000.00</p>
+            <button>Add to Cart</button>
+            <button>Buy It Now</button>
+        </div>
+
+        <!-- Apps & Games Category -->
+        <h3>Apps & Games</h3>
+        <div class="product">
+            <a href="product2.html">
+                <img src="https://m.media-amazon.com/images/I/51ljnEaW0pL._SX522_.jpg" alt="Gaming Console">
+                <p>Sony PlayStation®5 Console (slim)</p>
+            </a>
+            <p>₹55,000.00</p>
+            <button>Add to Cart</button>
+            <button>Buy It Now</button>
+        </div>
+
+        <!-- Continue adding other products similarly -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your E-commerce Store. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Search Functionality -->
+    <script>
+        function searchProducts() {
+            const input = document.getElementById('searchBar').value.toLowerCase();
+            const products = document.querySelectorAll('#productList .product');
+
+            products.forEach(product => {
+                const name = product.querySelector('p').textContent.toLowerCase();
+                product.style.display = name.includes(input) ? '' : 'none';
+            });
+        }
+    </script>
+
+</body>
+</html>
